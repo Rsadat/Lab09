@@ -1,1 +1,53 @@
-your answers here
+4. Read about how to reap threads in Section 3 and answer the following questions. (a) Consider a scenario where thread A calls pthread_join to reap thread B. If the thread B does not terminate, when will the call to pthread_join in thread A return? (b) Let’s say your implementation for HW 6 can serve all passengers but an elevator thread does not terminate, will the simulation ignore this thread and still end as expected?your answers here
+2a. Every process that includes the function Pthread_create creates a single thread, however each process always
+consist of a main thread as well.
+
+2b. the parameter/argument that creates a thread routine is func* f
+
+2c. In HW6 it will create the same number of threads of the sum of the total
+passengers and elevators. the names of the threads are start_passenger
+and start_elevator.
+
+3. done
+
+4a. thread A will remain blocked until thread B will terminate, since
+thread A calls  
+4b. No the the simulation will not work properly and will not ignore the
+thread elevator that is not terminating.
+
+5. done
+
+6. done
+
+7a. by the main thread, it will create two threads, one even thread and
+one odd thread.
+7b. Thread even and thread odd are the only one running concurrently since
+the main thread is getting blocked by until the two threads finish.
+
+8. No, it will not consistently print messages zero to three.
+
+9a. the four main events for the profram in lab09_2.c are based on the 
+incrmentation of value counter from 0 to 3.
+
+9b. The main reason why it will not consistently run and count to three is
+that the kernal and CPU affects the scheduling of which thread will 
+finish first.
+
+10a. Counter is the global variable that represents the shared memory
+between the two threads.
+
+10b.it is considered unlocked when it is first initialized.
+
+10c.when pthread_mutex_lock is called by thread A but thread B is using it.
+the function will block thread B from using it until the calling thread can 
+get ownership.
+
+11a. the predicate is counter != 1
+
+11b. it will regain ownership of mutex while the pthread_cond_wait 
+then once it returns it no longer has ownership of mutex lock.
+
+11c. for thread A to immediately block on condition variable again when it
+is scheduled to run the condition counter !=1 has to be true again
+
+12. 
